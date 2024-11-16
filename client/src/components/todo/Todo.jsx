@@ -35,7 +35,7 @@ const Todo = ({ changeLoad }) => {
         changeLoad(true);
 
         const response = await axios.post(
-          "http://localhost:4000/api/v2/addTask",
+          "https://todolist-7823.onrender.com/api/v2/addTask",
           {
             title: Inputs.title,
             body: Inputs.body,
@@ -78,7 +78,7 @@ const Todo = ({ changeLoad }) => {
       try {
         changeLoad(true);
         const res = await axios.delete(
-          `http://localhost:4000/api/v2/deleteTask/${Cardid}`,
+          `https://todolist-7823.onrender.com/api/v2/deleteTask/${Cardid}`,
           {
             data: { id },
             headers: {
@@ -132,7 +132,7 @@ const Todo = ({ changeLoad }) => {
         const token = sessionStorage.getItem("jwttoken"); // Retrieve the latest token
         try {
           const res = await axios.get(
-            `http://localhost:4000/api/v2/getTasks/${id}`,
+            `https://todolist-7823.onrender.com/api/v2/getTasks/${id}`,
             {
               headers: {
                 Authorization: `${token}`,

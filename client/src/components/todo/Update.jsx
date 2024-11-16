@@ -26,11 +26,15 @@ const Update = ({ display, update, UpdateArray }) => {
   const submit = async () => {
     // console.log(token);
     await axios
-      .put(`http://localhost:4000/api/v2/updateTask/${update._id}`, Inputs, {
-        headers: {
-          Authorization: token,
-        },
-      })
+      .put(
+        `https://todolist-7823.onrender.com/api/v2/updateTask/${update._id}`,
+        Inputs,
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      )
       .then((res) => {
         // console.log(res);
         if (res.data.message === "Update Completed") {
